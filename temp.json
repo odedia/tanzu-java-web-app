@@ -1,0 +1,60 @@
+{
+  "apiVersion": "v1",
+  "kind": "Namespace",
+  "metadata": {
+    "annotations": {
+      "kapp-controller.carvel.dev/exclude-global-packages": ""
+    },
+    "creationTimestamp": "2022-02-25T11:27:35Z",
+    "deletionTimestamp": "2022-02-25T14:23:21Z",
+    "labels": {
+      "kubernetes.io/metadata.name": "demos"
+    },
+    "name": "demos",
+    "resourceVersion": "3826590",
+    "uid": "53b60677-aed2-466e-a4fb-4ceb1546777d"
+  },
+  "spec": {
+    "finalizers": []
+  },
+  "status": {
+    "conditions": [
+      {
+        "lastTransitionTime": "2022-02-25T14:23:34Z",
+        "message": "All resources successfully discovered",
+        "reason": "ResourcesDiscovered",
+        "status": "False",
+        "type": "NamespaceDeletionDiscoveryFailure"
+      },
+      {
+        "lastTransitionTime": "2022-02-25T14:23:34Z",
+        "message": "All legacy kube types successfully parsed",
+        "reason": "ParsedGroupVersions",
+        "status": "False",
+        "type": "NamespaceDeletionGroupVersionParsingFailure"
+      },
+      {
+        "lastTransitionTime": "2022-02-25T14:29:05Z",
+        "message": "All content successfully deleted, may be waiting on finalization",
+        "reason": "ContentDeleted",
+        "status": "False",
+        "type": "NamespaceDeletionContentFailure"
+      },
+      {
+        "lastTransitionTime": "2022-02-25T14:23:34Z",
+        "message": "Some resources are remaining: apps.kappctrl.k14s.io has 1 resource instances",
+        "reason": "SomeResourcesRemain",
+        "status": "True",
+        "type": "NamespaceContentRemaining"
+      },
+      {
+        "lastTransitionTime": "2022-02-25T14:23:34Z",
+        "message": "Some content in the namespace has finalizers remaining: finalizers.kapp-ctrl.k14s.io/delete in 1 resource instances",
+        "reason": "SomeFinalizersRemain",
+        "status": "True",
+        "type": "NamespaceFinalizersRemaining"
+      }
+    ],
+    "phase": "Terminating"
+  }
+}
