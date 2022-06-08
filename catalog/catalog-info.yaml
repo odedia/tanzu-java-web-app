@@ -15,6 +15,3 @@ spec:
   type: service
   lifecycle: experimental
   owner: default-team
-  providesApis: # list of APIs provided by the Component
-    - todo-api
-
