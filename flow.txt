@@ -1,3 +1,5 @@
+Create Accelerator
+
 iterate cluster - Tiltfile
 Update code
 Live view
@@ -8,6 +10,10 @@ tanzu services claims get todos-db --namespace petclinic
 
 kubectx tap-eks-build
 export DEVELOPER_NAMESPACE=demos
+
+tanzu apps workload create -f config/workload.yaml
+
+Supply chains
 
 EXAMPLE_DIGEST=$(kubectl get kservice tanzu-java-web-app -n $DEVELOPER_NAMESPACE -o jsonpath='{.spec.template.spec.containers[0].image}' | awk -F @ '{ print $2 }')
 
