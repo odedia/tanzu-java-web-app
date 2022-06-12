@@ -1,0 +1,25 @@
+iterate cluster - Tiltfile
+Update code
+Live view
+Debug?
+tanzu service types list
+tanzu services claims list
+tanzu services claims get todos-db --namespace petclinic
+
+kubectx tap-eks-build
+export DEVELOPER_NAMESPACE=demos
+
+EXAMPLE_DIGEST=$(kubectl get kservice tanzu-java-web-app -n $DEVELOPER_NAMESPACE -o jsonpath='{.spec.template.spec.containers[0].image}' | awk -F @ '{ print $2 }')
+
+
+kubectx tap-eks-view
+export METADATA_STORE_ACCESS_TOKEN=$(kubectl get secrets -n metadata-store -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='metadata-store-read-write-client')].data.token}" | base64 -d)
+
+export INGRESS_DOMAIN=tapview.tanzutime.com
+
+tanzu insight config set-target https://metadata-store.tapview.tanzutime.com --access-token=$METADATA_STORE_ACCESS_TOKEN
+
+
+tanzu insight image get --digest $EXAMPLE_DIGEST --format json
+tanzu insight image packages --digest $EXAMPLE_DIGEST --format json
+tanzu insight image vulnerabilities --digest $EXAMPLE_DIGEST --format json

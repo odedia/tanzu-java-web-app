@@ -14,7 +14,7 @@ public class HelloController {
 		Long start = System.currentTimeMillis();
 		logger.debug("Entered greeting method");
 		
-		String  greeting = "Greetings from Spring Boot + Tanzu!";
+		String  greeting = "Greetings from Spring Boot + Tanzu!!!";
 		
 		logger.debug("Exited greeting method. Total time: {} ms", System.currentTimeMillis()-start);
 
