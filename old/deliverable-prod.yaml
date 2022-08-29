@@ -1,0 +1,38 @@
+apiVersion: v1
+items:
+- apiVersion: carto.run/v1alpha1
+  kind: Deliverable
+  metadata:
+    creationTimestamp: "2022-07-22T09:00:58Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: deliverable
+      app.kubernetes.io/part-of: tanzu-java-web-app
+      app.tanzu.vmware.com/deliverable-type: web
+      apps.tanzu.vmware.com/has-tests: "true"
+      apps.tanzu.vmware.com/workload-type: web
+      carto.run/cluster-template-name: deliverable-template
+      carto.run/resource-name: deliverable
+      carto.run/supply-chain-name: source-test-scan-to-url
+      carto.run/template-kind: ClusterTemplate
+      carto.run/workload-name: tanzu-java-web-app
+      carto.run/workload-namespace: demos
+    name: tanzu-java-web-app
+    namespace: demos
+    resourceVersion: "130826071"
+    uid: a17b3dc1-8059-4a6a-99e7-729c556518ba
+  spec:
+    params:
+    - name: gitops_ssh_secret
+      value: git-ssh
+    - name: gitops_sub_path
+      value: config/demos/tanzu-java-web-app
+    source:
+      git:
+        ref:
+          branch: main
+        url: https://github.com/odedia/tap-gitops.git
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
