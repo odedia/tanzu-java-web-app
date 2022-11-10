@@ -20,11 +20,11 @@ metadata:
 spec:
   params:
   - name: gitops_ssh_secret
-    value: git-ssh
+    value: git-https
   - name: gitops_sub_path
     value: config/demos/tanzu-java-web-app
   source:
     git:
       ref:
-        branch: test
+        branch: main
       url: https://github.com/odedia/tap-gitops.git

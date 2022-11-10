@@ -1,9 +1,8 @@
 allow_k8s_contexts('tap-gke-iterate')
 allow_k8s_contexts('tap-iterate')
-allow_k8s_contexts('tanzu-community-edition')
 SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='your-registry.io/project/tanzu-java-web-app-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
-NAMESPACE = os.getenv("NAMESPACE", default='default')
+NAMESPACE = os.getenv("NAMESPACE", default='demos')
 
 k8s_custom_deploy(
     'tanzu-java-web-app',
