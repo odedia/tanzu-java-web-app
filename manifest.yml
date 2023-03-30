@@ -1,0 +1,7 @@
+---
+applications:
+- name: testlight
+  path: ./target/demo-0.0.1-SNAPSHOT.jar
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+}}'
+    JAVA_OPTS: "-agentpath:/home/vcap/app/BOOT-INF/classes/agent/lightrun_agent.so -Dcom.lightrun.secret=0981f9f3-e750-4790-82fc-5144931ed296"
