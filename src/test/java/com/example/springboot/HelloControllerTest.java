@@ -13,19 +13,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(HelloController.class)
 class HelloControllerTest {
 
-    @Autowired
-    private HelloController controller;
+	@Autowired
+	private HelloController controller;
 
-    @Autowired
-    private MockMvc mockMvc;
+	@Autowired
+	private MockMvc mockMvc;
 
-    @Test
-    void index() throws Exception {
-        assertEquals("Greetings from Spring Boot + Tanzu!!!", controller.index());
+	@Test
+	void index() throws Exception {
+		assertEquals("Greetings from Spring Boot + Tanzu!!!", controller.index());
 
-        mockMvc
-            .perform(get("/"))
-            .andExpect(status().isOk())
-            .andExpect(content().string("Greetings from Spring Boot + Tanzu!!!"));
-    }
+		mockMvc.perform(get("/"))
+			.andExpect(status().isOk())
+			.andExpect(content().string("Greetings from Spring Boot + Tanzu!!!"));
+	}
+
 }
