@@ -10,10 +10,10 @@ spec:
   build:
     env:
     - name: BP_JVM_VERSION
-      value: "17"
+      value: "11"
   params:
-    - name: dockerfile
-      value: ./docker-example/Dockerfile
+    # - name: dockerfile
+    #   value: ./docker-example/Dockerfile
     - name: annotations
       value:
         autoscaling.knative.dev/minScale: "1"
